@@ -1,0 +1,150 @@
+
+
+
+/* General body and container styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  height: 100vh;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-y: hidden; /* Prevent vertical scrolling */
+  opacity: 1; /* Ensure body is visible after preload */
+  transition: opacity 1s ease, background-color 1s ease; /* Smooth fade-in */
+}
+
+.container {
+  display: flex;
+  align-items: flex-end;
+  width: max-content;
+  position: absolute;
+  bottom: 0;
+  left: 0; /* Position the container to the left edge of the screen */
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #ffffff;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  outline: 1px solid black;
+  position: relative; /* Ensure proper placement of images */
+  flex-shrink: 0; /* Prevent boxes from shrinking in the flex container */
+  box-sizing: border-box; /* Ensure dimensions include border and padding */
+  margin-right: 1px; /* Compensate for fractional pixel rendering */
+}
+
+/* Adjusting the size and positioning of the boxes */
+.box:nth-child(1) { width: 40vh; height: 40vh; }
+.box:nth-child(2) { width: 50vh; height: 50vh; }
+.box:nth-child(3) { width: 60vh; height: 60vh; }
+.box:nth-child(4) { width: 70vh; height: 70vh; }
+.box:nth-child(5) { width: 80vh; height: 80vh; }
+.box:nth-child(6) { width: 90vh; height: 90vh; }
+
+.box:nth-child(7) { width: 90vh; height: 90vh; }
+.box:nth-child(8) { width: 80vh; height: 80vh; }
+.box:nth-child(9) { width: 70vh; height: 70vh; }
+.box:nth-child(10) { width: 60vh; height: 60vh; }
+.box:nth-child(11) { width: 50vh; height: 50vh; }
+.box:nth-child(12) { width: 40vh; height: 40vh; }
+
+.box:nth-child(13) { width: 40vh; height: 40vh; }
+.box:nth-child(14) { width: 50vh; height: 50vh; }
+.box:nth-child(15) { width: 60vh; height: 60vh; }
+.box:nth-child(16) { width: 70vh; height: 70vh; }
+.box:nth-child(17) { width: 80vh; height: 80vh; }
+.box:nth-child(18) { width: 90vh; height: 90vh; }
+
+.box:nth-child(19) { width: 90vh; height: 90vh; }
+.box:nth-child(20) { width: 80vh; height: 80vh; }
+.box:nth-child(21) { width: 70vh; height: 70vh; }
+.box:nth-child(22) { width: 60vh; height: 60vh; }
+.box:nth-child(23) { width: 50vh; height: 50vh; }
+.box:nth-child(24) { width: 40vh; height: 40vh; }
+
+.box img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute; /* Position the image within the box */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease; /* Smooth fade-in effect */
+  pointer-events: none; /* Ignore mouse events for the image itself */
+}
+
+.box:hover img {
+  opacity: 1; /* Show the image when hovering over the box */
+}
+
+.info-box {
+  position: fixed;
+  top: 20px; /* Adjust position as needed */
+  left: 20px; /* Adjust position as needed */
+  max-width: 600px;
+  color: black;
+  font-size: 100rem;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-weight: 100;
+  text-align: left;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease, font-size 0.5s ease; /* Smooth transitions for both properties */
+  user-select: none; /* Prevent text from being highlighted */
+}
+
+/* Styles for the hover link */
+.hover-link {
+  position: fixed;
+  top: -20px; /* Adjust positioning as needed */
+  right: 20px; /* Adjust positioning as needed */
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 90px; /* Adjust font size as needed */
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease, opacity 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.hover-link:hover {
+  color: grey; /* Change text color on hover */
+}
+
+/* Initial state for the page (hidden and white background) */
+body.preload {
+  opacity: 0; /* Fully transparent */
+  background-color: white; /* White background */
+}
+
+/* Apply fade-in animation from white */
+body.fade-in {
+  animation: fadeInFromWhite 1s ease forwards; /* Use the fadeInFromWhite animation */
+}
+
+/* Define the fade-in from white animation */
+@keyframes fadeInFromWhite {
+  0% {
+    background-color: white; /* Initial white background */
+    opacity: 0; /* Fully transparent */
+  }
+  50% {
+    background-color: white; /* Retain white background halfway */
+    opacity: 0.5; /* Partial visibility */
+  }
+  100% {
+    background-color: transparent; /* Clear background to reveal content */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+/* Fade-out effect */
+body.fade-out {
+  opacity: 0; /* Fully transparent */
+  transition: opacity 0.3s ease; /* Smooth fade-out */
+  
+}
+
